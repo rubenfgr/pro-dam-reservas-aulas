@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" stylesheets="@../estilos/estilo_rfgr87_002.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.iesalandalus.programacion.reservasaulas.vista.iugrafica.controlador.ControladorEscenaLogin">
+   <children>
+      <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label styleClass="login-titulo" text="PROGRAMACIÓN" />
+            <Label />
+            <Separator maxWidth="500.0" />
+            <Label styleClass="login-atr" text="Tarea Online 9 - JavaFX" />
+            <Separator maxWidth="500.0" />
+            <Label styleClass="login-valor" />
+            <Label styleClass="login-atr" text="Profesor" />
+            <Label styleClass="login-valor" text="José Ramón Jiménez Reyes" />
+            <Label />
+            <Separator maxWidth="250.0" />
+            <Label />
+            <Label styleClass="login-atr" text="Alumno" />
+            <Label styleClass="login-valor" text="Rubén Francisco Gazquez Rosales" />
+            <Label />
+            <Separator maxWidth="300.0" />
+            <Label />
+            <Button mnemonicParsing="false" onAction="#entrar" text="ENTRAR" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

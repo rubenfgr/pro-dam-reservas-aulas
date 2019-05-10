@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" stylesheets="@../estilos/estilo_rfgr87_001.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.iesalandalus.programacion.reservasaulas.vista.iugrafica.controlador.ControladorEscenaPrincipal">
+   <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <MenuBar BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="Archivo">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#guardar" text="Guardar" />
+                        <MenuItem mnemonicParsing="false" onAction="#salir" text="Salir" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Ver">
+                  <items>
+                    <MenuItem fx:id="miReservas" mnemonicParsing="false" onAction="#verReservas" text="Reservas" />
+                        <MenuItem fx:id="miProfesores" mnemonicParsing="false" onAction="#verProfesores" text="Profesores" />
+                        <MenuItem fx:id="miAulas" mnemonicParsing="false" onAction="#verAulas" text="Aulas" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Ayuda">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#verPortada" text="Portada" />
+                        <MenuItem mnemonicParsing="false" onAction="#verAcercaDe" text="Acerca de" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+         <center>
+            <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" rotateGraphic="true" styleClass="background" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#nuevaReserva" text="Nueva reserva" />
+                        <MenuItem mnemonicParsing="false" onAction="#agregarProfesor" text="Agregar profesor" />
+                        <MenuItem mnemonicParsing="false" onAction="#agregarAula" text="Agregar aula" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu></TabPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

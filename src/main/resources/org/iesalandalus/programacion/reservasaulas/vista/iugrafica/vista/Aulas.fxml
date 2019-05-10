@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="550.0" prefWidth="800.0" stylesheets="@../estilos/estilo_rfgr87_001.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.iesalandalus.programacion.reservasaulas.vista.iugrafica.controlador.ControladorAulas">
+   <children>
+      <SplitPane dividerPositions="0.4" prefHeight="340.0" prefWidth="381.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" styleClass="background">
+               <children>
+                  <VBox prefHeight="548.0" prefWidth="287.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Label text="Buscar:" />
+                              <TextField fx:id="tfBuscarAula" promptText="aula" />
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                        <TableView fx:id="tvAulas" prefHeight="200.0" prefWidth="347.0" VBox.vgrow="ALWAYS">
+                          <columns>
+                            <TableColumn fx:id="tcNombreAula" prefWidth="75.0" text="Nombre" />
+                            <TableColumn fx:id="tcPuestosAula" prefWidth="75.0" text="Puestos" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#nuevoAula" text="Agregar aula" />
+                              <Button mnemonicParsing="false" onAction="#borrarAula" text="Eliminar" />
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" styleClass="background">
+               <children>
+                  <VBox prefHeight="548.0" prefWidth="396.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label text="Lista de reservas">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Label text="Buscar:" />
+                              <TextField fx:id="tfBuscarReserva" promptText="reserva aula" />
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                        <TableView fx:id="tvReservasAula" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                          <columns>
+                            <TableColumn fx:id="tcReservaProfesor" prefWidth="75.0" text="Profesor" />
+                            <TableColumn fx:id="tcReservaDia" prefWidth="75.0" text="Día" />
+                              <TableColumn fx:id="tcReservaTipo" prefWidth="75.0" text="Tipo" />
+                              <TableColumn fx:id="tcReservaTramoHora" prefWidth="75.0" text="Tramo/Hora" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#nuevaReservaAula" text="Nueva reserva" />
+                              <Button mnemonicParsing="false" onAction="#borrarReservaAula" text="Anular" />
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

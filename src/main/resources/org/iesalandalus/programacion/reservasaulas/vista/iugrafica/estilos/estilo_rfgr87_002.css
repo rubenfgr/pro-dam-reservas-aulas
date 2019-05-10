@@ -1,0 +1,72 @@
+.root {
+	-fx-accent: #FAFDFF;
+	-fx-focus-color: transparent;
+}
+
+.background {
+    -fx-background-color: #F7FCFF;
+}
+
+.login-titulo {
+    -fx-font-size: 60px;
+    -fx-font-family: "Times New Roman";
+    -fx-text-fill: #1F3849;
+    -fx-opacity: 1.0;
+    -fx-effect: dropshadow( gaussian, #82ACC1, 15.0, 0.0, 0.0, 0.0 );
+}
+
+.login-atr {
+    -fx-font-size: 30px;
+    -fx-font-family: "Times New Roman";
+    -fx-text-fill: #25223c;
+    -fx-opacity: 1.0;
+    -fx-effect: dropshadow( gaussian, #8EAAC6, 8.0, 0.0, 0.0, 0.0 );
+}
+
+.login-valor {
+    -fx-font-size: 20px;
+    -fx-font-family: "Times New Roman";
+    -fx-text-fill: #1A3349;
+    -fx-opacity: 1.0;
+
+}
+
+.button {
+    -fx-padding: 5.0 22.0 5.0 22.0;   
+    -fx-border-color: #344D5E;
+    -fx-border-width: 1.0;
+    -fx-border-radius: 5.0;
+    -fx-background-color: linear-gradient(to bottom, #87A2B4, #A6C2D4);
+    -fx-effect: innershadow(gaussian, #2D4559, 6.0, 0.0, 0.0, 0.0 );
+	-fx-font-size: 12.0pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: black;
+    -fx-opacity: 1.0;
+    -fx-text-fill: black;
+    -fx-background-insets: 0.0 0.0 0.0 0.0, 0.0, 1.0, 2.0;
+}
+
+.button:hover {
+    -fx-background-color: #D1E1EE;
+    -fx-effect: dropshadow(gaussian, #324B58, 10.0, 0.0, 0.0, 0.0 );
+}
+
+.button:pressed, .button:default:hover:pressed {
+  -fx-background-color: #CDE1F0;
+  -fx-text-fill: black;
+}
+
+.button:disabled, .button:default:disabled {
+    -fx-opacity: 0.4;
+    -fx-background-color: #1d1d1d;
+    -fx-text-fill: white;
+}
+
+.button:default {
+    -fx-background-color: #8FD0E6;
+    -fx-text-fill: black;
+}
+
+.button:default:hover {
+    -fx-background-color: derive(-fx-focus-color,30.0%);
+}
