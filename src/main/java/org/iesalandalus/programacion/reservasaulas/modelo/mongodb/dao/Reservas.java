@@ -1,5 +1,8 @@
 package org.iesalandalus.programacion.reservasaulas.modelo.mongodb.dao;
 
+import static com.mongodb.client.model.Filters.and;
+import static com.mongodb.client.model.Filters.eq;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,8 +20,6 @@ import org.iesalandalus.programacion.reservasaulas.modelo.dominio.permanencia.Pe
 import org.iesalandalus.programacion.reservasaulas.modelo.mongodb.utilidades.MongoDB;
 
 import com.mongodb.client.MongoCollection;
-import static com.mongodb.client.model.Filters.and;
-import static com.mongodb.client.model.Filters.eq;
 
 public class Reservas {
 

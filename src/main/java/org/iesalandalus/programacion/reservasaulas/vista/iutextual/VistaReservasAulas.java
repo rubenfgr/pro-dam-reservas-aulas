@@ -11,6 +11,7 @@ import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Profesor;
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Reserva;
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.permanencia.Permanencia;
 import org.iesalandalus.programacion.reservasaulas.vista.IVistaReservasAulas;
+import org.iesalandalus.programacion.reservasaulas.vista.iugrafica.utilidades.Dialogos;
 
 /**
  * @author RubenFrancisco
@@ -66,8 +67,11 @@ public class VistaReservasAulas implements IVistaReservasAulas {
 		Consola.mostrarCabecera("Borrar Aula");
 		try {
 			Aula aula = controlador.buscarAula(new Aula(Consola.leerNombreAula(), 10));
-			controlador.borrarAula(aula);
-			System.out.println("Se borro el Aula correctamente. " + aula);
+			if (controlador.getReservasAula(aula).size() < 1) {
+				controlador.borrarAula(aula);
+			} else {
+				System.out.println("No puede borrar un aula que tiene reservas realizadas");
+			}
 		} catch (OperationNotSupportedException e) {
 			System.out.println(ERROR + e.getMessage());
 		} catch (IllegalArgumentException e1) {
@@ -121,8 +125,11 @@ public class VistaReservasAulas implements IVistaReservasAulas {
 		try {
 			String nombre = Consola.leerNombreProfesor();
 			Profesor profesor = new Profesor(nombre, CORREO_VALIDO);
-			controlador.borrarProfesor(profesor);
-			System.out.println("Se borro correctamente el profesor . " + "[nombre=" + nombre + "]");
+			if (controlador.getReservasProfesor(profesor).size() < 1) {
+				controlador.borrarProfesor(profesor);
+			} else {
+				System.out.println("No puede borrar un profesor que tiene reservas realizadas");
+			}
 		} catch (OperationNotSupportedException e) {
 			System.out.println(ERROR + e.getMessage());
 		} catch (IllegalArgumentException e1) {
@@ -231,7 +238,7 @@ public class VistaReservasAulas implements IVistaReservasAulas {
 	public void listarReservasAula() {
 		Consola.mostrarCabecera("Lista de reservas por Aula");
 		try {
-			Aula aula = new Aula(Consola.leerNombreAula(),10);
+			Aula aula = new Aula(Consola.leerNombreAula(), 10);
 			List<Reserva> reservas = controlador.getReservasAula(aula);
 			if (reservas.isEmpty()) {
 				System.out.println("No existen reservas para el Aula: " + aula);
@@ -288,7 +295,7 @@ public class VistaReservasAulas implements IVistaReservasAulas {
 	public void consultarDisponibilidad() {
 		Consola.mostrarCabecera("Consultar disponibilidad");
 		try {
-			Aula aula = new Aula(Consola.leerNombreAula(),10);
+			Aula aula = new Aula(Consola.leerNombreAula(), 10);
 			if (controlador.buscarAula(aula) != null) {
 				Permanencia permanencia = Consola.leerPermanencia();
 				boolean disponible = controlador.consultarDisponibilidad(aula, permanencia);
