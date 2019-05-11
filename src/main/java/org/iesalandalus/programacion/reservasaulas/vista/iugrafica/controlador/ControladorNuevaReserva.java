@@ -17,7 +17,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
@@ -99,18 +98,20 @@ public class ControladorNuevaReserva implements Initializable {
 	}
 	
 	private void seleccionarProfesor(String nombreProfesor) {
-		Profesor profesorBuscar = new Profesor(nombreProfesor, "a@a.a");
-		profesor = controladorMVC.buscarProfesor(profesorBuscar);
-		if (profesor != null) {
+		profesor = new Profesor(nombreProfesor, "a@a.a");
+		int indice = controladorMVC.getProfesores().indexOf(profesor);
+		if (indice >= 0) {
+			profesor = controladorMVC.getProfesores().get(indice);
 			lbProfesorCorreo.setText(profesor.getCorreo());
 			lbProfesorTelefono.setText(profesor.getTelefono());
 		}
 	}
 
 	private void seleccionarAula(String nombreAula) {
-		Aula aulaBuscar = new Aula(nombreAula, 10);
-		aula = controladorMVC.buscarAula(aulaBuscar);
-		if (aula != null) {
+		aula = new Aula(nombreAula, 10);
+		int indice = controladorMVC.getAulas().indexOf(aula);
+		if (indice >= 0) {
+			aula = controladorMVC.getAulas().get(indice);
 			lbAulaPuestos.setText(String.valueOf(aula.getPuestos()));
 		}
 	}

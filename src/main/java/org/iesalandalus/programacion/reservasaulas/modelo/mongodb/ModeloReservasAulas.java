@@ -9,9 +9,10 @@ import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Aula;
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Profesor;
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.Reserva;
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.permanencia.Permanencia;
-import org.iesalandalus.programacion.reservasaulas.modelo.ficheros.dao.Aulas;
-import org.iesalandalus.programacion.reservasaulas.modelo.ficheros.dao.Profesores;
-import org.iesalandalus.programacion.reservasaulas.modelo.ficheros.dao.Reservas;
+import org.iesalandalus.programacion.reservasaulas.modelo.mongodb.dao.Aulas;
+import org.iesalandalus.programacion.reservasaulas.modelo.mongodb.dao.Profesores;
+import org.iesalandalus.programacion.reservasaulas.modelo.mongodb.dao.Reservas;
+import org.iesalandalus.programacion.reservasaulas.modelo.mongodb.utilidades.MongoDB;
 
 /**
  * @author RubenFrancisco
@@ -33,16 +34,12 @@ public class ModeloReservasAulas implements IModeloReservasAulas {
 	
 	@Override
 	public void comenzar() {
-		profesores.leer();
-		aulas.leer();
-		reservas.leer();
+		MongoDB.establecerConexion();
 	}
 	
 	@Override
 	public void terminar() {
-		profesores.escribir();
-		aulas.escribir();
-		reservas.escribir();
+		MongoDB.cerrarCliente();
 	}
 	
 	// --- METHODS ---

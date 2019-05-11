@@ -102,7 +102,6 @@ public class Ventanas {
 					try {
 						controladorMVC.borrarProfesor(profesor);
 						controladorPrincipal.actualizarProfesores();
-						escenarioAgregarProfesor.close();
 					} catch (OperationNotSupportedException e) {
 						Dialogos.mostrarDialogoError("ERROR", e.getMessage());
 					}
@@ -124,7 +123,6 @@ public class Ventanas {
 					try {
 						controladorMVC.borrarAula(aula);
 						controladorPrincipal.actualizarAulas();
-						escenarioAgregarAula.close();
 					} catch (OperationNotSupportedException e) {
 						Dialogos.mostrarDialogoError("ERROR", e.getMessage());
 					}

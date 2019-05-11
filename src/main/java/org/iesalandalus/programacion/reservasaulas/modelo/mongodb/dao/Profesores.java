@@ -64,7 +64,7 @@ public class Profesores {
 	}
 
 	public Profesor buscar(Profesor profesor) {
-		Document documentoProfesor = coleccionProfesores.find().filter(eq(MongoDB.PROFESOR_NOMBRE, profesor.getNombre())).first();
+		Document documentoProfesor = coleccionProfesores.find().filter(eq(MongoDB.NOMBRE, profesor.getNombre())).first();
 		return MongoDB.obtenerProfesorDesdeDocumento(documentoProfesor);
 	}
 
@@ -73,7 +73,7 @@ public class Profesores {
 			throw new IllegalArgumentException("No se puede borrar un profesor nulo.");
 		}
 		if (buscar(profesor) != null) {
-			coleccionProfesores.deleteOne(eq(MongoDB.PROFESOR_NOMBRE, profesor.getNombre()));
+			coleccionProfesores.deleteOne(eq(MongoDB.NOMBRE, profesor.getNombre()));
 		} else {
 			throw new OperationNotSupportedException("El profesor a borrar no existe.");
 		}

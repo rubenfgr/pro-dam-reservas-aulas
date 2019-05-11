@@ -25,9 +25,9 @@ public class MongoDB {
 	
 	private static final String SERVIDOR = "35.180.192.242";
 	private static final int PUERTO = 27017;
-	private static final String BD = "tuBD";
-	private static final String USUARIO = "tuUsurario";
-	private static final String CONTRASENA = "tuContraseña";
+	private static final String BD = "reservasaulas-ruben-gazquez";
+	private static final String USUARIO = "ruben-gazquez";
+	private static final String CONTRASENA = "ruben-gazquez-1156";
 	
 	public static final String PROFESOR = "profesor";
 	public static final String NOMBRE = "nombre";

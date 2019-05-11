@@ -12,7 +12,7 @@
             <Label styleClass="login-titulo" text="PROGRAMACIÓN" />
             <Label />
             <Separator maxWidth="500.0" />
-            <Label styleClass="login-atr" text="Tarea Online 9 - JavaFX" />
+            <Label styleClass="login-atr" text="Tarea Online 10 - Persistencia de datos con MongoDB" />
             <Separator maxWidth="500.0" />
             <Label styleClass="login-valor" />
             <Label styleClass="login-atr" text="Profesor" />
